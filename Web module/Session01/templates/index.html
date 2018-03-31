@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Blog Ne </h1>
+    <!-- jinja2 template -->
+
+
+   {% for p in posts %}
+
+    <h2>{{ p.title }}</h2>
+    <p>
+      {{ p.content }}
+    </p>
+
+    <i> By:
+        {{ "Mr" if p.gender == 1 else "Mrs" }}
+
+      {{ p.author }} </i>
+
+    {% endfor %}
+
+    </body>
+</html>
