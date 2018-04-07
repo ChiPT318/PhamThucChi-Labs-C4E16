@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mua Dong Khong Lanh</title>
+  </head>
+  <body>
+    Thay doi thong tin
+    <form method=post>
+
+        <label> Name </label>
+        <input type="text" name="name" value="{{service.name}}">
+
+        <label> YOB </label>
+        <input type="number" name="yob" value="{{ service.yob }}">
+
+        <label> Address </label>
+        <input type="text" name="address" value="{{ service.address }}">
+        <br>
+        <label></label>
+        <input type="radio" name="gender" value="1" checked> Nam <br>
+        <input type="radio" name="gender" value="0"> Nu
+        <br>
+        <input type="submit">
+
+    </form>
+
+  </body>
+</html>

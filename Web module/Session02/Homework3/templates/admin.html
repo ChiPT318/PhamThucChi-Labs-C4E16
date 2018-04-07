@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+  </head>
+  <body>
+    <h1> Admin page </h1>
+
+    <a href="{{url_for("create")}}"> Them Nhan Vien </a>
+    <table border="1px">
+
+      <thead>
+
+        <th> STT </th>
+        <th> Name </th>
+        <th> YOB </th>
+        <th> Gender </th>
+        <th> Height </th>
+        <th> SDT </th>
+        <th> Address </th>
+        <th> Status </th>
+        <th> Measurements </th>
+        <th></th>
+
+      </thead>
+
+      <tbody>
+        {% for service in services %}
+          <tr>
+            <td> {{loop.index}} </td>
+            <td> {{ service.name }} </td>
+            <td> {{ service.yob }} </td>
+            <td> {{ "Nam" if service.gender == 1 else "Nu" }} </td>
+            <td> {{ service.height }} </td>
+            <td> {{ service.phone }} </td>
+            <td> {{ service.address }} </td>
+            <td> {{ "Ranh" if service.status else "Ban" }} </td>
+            <td> {{ service.measurements }} </td>
+            <td>
+              <a href="{{ url_for("update", service_id=service.id) }}"> Sua </a>
+              <a href="{{ url_for("delete", service_id=service.id) }}"> Xoa </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </body>
+</html>

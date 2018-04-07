@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Database Intro </title>
+  </head>
+  <body>
+      <h1> Search </h1>
+      <!-- source -->
+      {%for service in all_services%}
+
+        {% if service.gender == 0 %}
+          <img src="https://via.placeholder.com/300x300" alt="">
+        {% else %}
+          <img src="https://via.placeholder.com/300x200" alt="">
+        {%endif%}
+
+        <p>Name: {{service.name}} </p>
+        <p>YOB: {{service.yob}}</p>
+
+        <a href="{{url_for("detail", service_id=service.id)}}"> Chi tiet </a>
+        <br>
+        <br>
+        <p>*********************************************************</p>
+        {% endfor %}
+
+  </body>
+
+  </html>
